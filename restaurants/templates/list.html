@@ -4,9 +4,20 @@
 
 {% block content %}
 <br>
+<form action="{% url 'restaurant-list' %}">
+  
+    <input type="text"  placeholder="Search" aria-label="Search" name="q" value="{{request.GET.q}}">
+    
+      <button type="submit">Search</button>
+   
+
+</form>
 <div class="row">
     {% for restaurant in restaurants %}
     <div class="col-md-4">
+
+        
+<br>
         <div class="card my-card">
           {% if restaurant.logo %}
             <img class="card-img-top" src="{{restaurant.logo.url}}" alt="Hey Noob, look at me...">
